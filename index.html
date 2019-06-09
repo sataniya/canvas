@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>canvas</title>
+</head>
+
+<body>
+
+    <div class="topbar">
+
+        <div class="color">
+            <div class="color-main">
+            	<div class="main-one">
+            		<div class="one-color"></div>
+            	</div>
+            </div>
+
+            <div class="color-switch">
+            	<div class="switch-one">
+            		<!-- <div class="one-color iconfont">&#xe600;</div> -->
+                    <svg class="icon one-color" aria-hidden="true">
+                          <use xlink:href="#iconnotify_blue"></use>
+                    </svg>
+            	</div>
+            	<div class="switch-one">
+            		<!-- <div class="one-color iconfont">&#xe65d;</div> -->
+                    <svg class="icon one-color" aria-hidden="true">
+                          <use xlink:href="#iconrgb"></use>
+                    </svg>
+            	</div>
+            </div>
+
+            <div class="color-rgb hide">
+            	<div class="rgb-one">
+            		<div>R</div><div id="red" class="rgb"></div><div id="red-val">000</div>
+            		<div>G</div><div id="green" class="rgb"></div><div id="green-val">000</div>
+            		<div>B</div><div id="blue" class="rgb"></div><div id="blue-val">000</div>
+            	</div>
+            </div>
+
+            <div class="color-list">
+            	<div class="list-one">
+            		<div class="one-color"></div>
+            	</div>
+            	<div class="list-one">
+            		<div class="one-color"></div>
+            	</div>
+            	<div class="list-one">
+            		<div class="one-color"></div>
+            	</div>
+            	<div class="list-one">
+            		<div class="one-color"></div>
+            	</div>
+            	<div class="list-one">
+            		<div class="one-color"></div>
+            	</div>
+            	<div class="list-one">
+            		<div class="one-color"></div>
+            	</div>
+            	<div class="list-one">
+            		<div class="one-color"></div>
+            	</div>
+            	<div class="list-one">
+            		<div class="one-color"></div>
+            	</div>
+            	<div class="list-one">
+            		<div class="one-color"></div>
+            	</div>
+            	<div class="list-one">
+            		<div class="one-color"></div>
+            	</div>
+            	<div class="list-one">
+            		<div class="one-color"></div>
+            	</div>
+            	<div class="list-one">
+            		<div class="one-color"></div>
+            	</div>
+            	<div class="list-one">
+            		<div class="one-color"></div>
+            	</div>
+            	<div class="list-one">
+            		<div class="one-color"></div>
+            	</div>
+            	<div class="list-one">
+            		<div class="one-color"></div>
+            	</div>
+            	<div class="list-one">
+            		<div class="one-color"></div>
+            	</div>
+            	<div class="list-one">
+            		<div class="one-color"></div>
+            	</div>
+            	<div class="list-one">
+            		<div class="one-color"></div>
+            	</div>
+            	<div class="list-one">
+            		<div class="one-color"></div>
+            	</div>
+            	<div class="list-one">
+            		<div class="one-color"></div>
+            	</div>
+            	<div class="list-one">
+            		<div class="one-color"></div>
+            	</div>
+            	<div class="list-one">
+            		<div class="one-color"></div>
+            	</div>
+            	<div class="list-one">
+            		<div class="one-color"></div>
+            	</div>
+            	<div class="list-one">
+            		<div class="one-color"></div>
+            	</div>
+            	<div class="list-one">
+            		<div class="one-color"></div>
+            	</div>
+            	<div class="list-one">
+            		<div class="one-color"></div>
+            	</div>
+            	<div class="list-one">
+            		<div class="one-color"></div>
+            	</div>
+            </div>
+
+        </div>
+
+        <div class="tool">
+
+            <div class="tool-list">
+                <div class="pancil list-one active" data-index="0">
+                   <span class="iconfont">&#xe7be;</span>
+                </div>
+                <div class="eraser list-one" data-index="1">
+                    <span class="iconfont">&#xe659;</span>
+                </div>
+                <div class="text list-one" data-index="2">
+                    <span class="iconfont">&#xe65f;</span>
+                </div>
+            </div>
+
+            <div class="tool-attr">
+
+                <div class="attr-pencil attr-one ">
+                	<div id="pencilpx"></div><div id="px">1</div>
+                </div>
+
+                 <div class="attr-eraser attr-one hide">
+                	<div id="textsize"></div><div id="size">1</div>
+                </div>
+
+                <div class="attr-text attr-one hide">
+                	<div class="family">
+                		<select id="fontfamily">
+                			<option value="SimSun">宋体</option>
+                			<option value="SimHei">黑体</option>
+                			<option value="Microsoft Yahei" selected="selected">微软雅黑</option>
+                			<option value="Microsoft JhengHei">微软正黑</option>
+                			<option value="KaiTi">楷体</option>
+                			<option value="NSimSun">新宋体</option>
+                			<option value="FangSong">仿宋</option>
+                		</select>
+                		<select id="fontsize">
+                			<option value="8">8</option>
+                			<option value="9">9</option>
+                			<option value="10">10</option>
+                			<option value="12">12</option>
+                			<option value="14">14</option>
+                			<option value="16" selected="selected">16</option>
+                			<option value="18">18</option>
+                			<option value="20">20</option>
+                			<option value="24">24</option>
+                		</select>
+                		<span class="iconfont BIU" data-index="0">&#xe633;</span>
+                		<span class="iconfont BIU" data-index="1">&#xe636;</span>
+                		<span class="iconfont BIU" data-index="2">&#xe63e;</span> 		
+                	</div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="clear">
+            <div class="iconfont">&#xe6fc;</div>
+        </div>
+
+        <div class="history">
+            <div class="iconfont">&#xe6ea;</div>
+            <div class="iconfont">&#xe6eb;</div>
+        </div>
+
+    </div>
+
+    <canvas id="mycanvas">
+        您的浏览器不支持 HTML5 canvas 标签。
+    </canvas>
+    <script src="./index.js"></script>
+</body>
+
+</html>

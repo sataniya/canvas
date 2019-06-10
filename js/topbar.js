@@ -92,7 +92,7 @@ function switchColorTool(){
 }
 
 function listColor(){
-  let colors=[
+  const colors=[
   "#000000","#969696","#FF0000",
   "#FF7D00","#00E100","#7DFF7D",
   "#0000FF","#7D7DFF","#9932CC",

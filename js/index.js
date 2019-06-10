@@ -52,17 +52,9 @@ function setStyles(){
 	}
 }
 
-function drawWays(data,x,y){
-	switch(data.tool){
-		case "pencil":  	
-			ctx.lineTo(x,y);
-			ctx.stroke();	
-			break;
-		case "eraser": 
-			ctx.lineTo(x,y);
-			ctx.stroke();	
-			break;
-	}
+function drawWays(x,y){
+	ctx.lineTo(x,y);
+	ctx.stroke();	
 }
 function drawText(x,y){
 	const input=$("<input type='text' />");
@@ -116,7 +108,7 @@ function startDraw(e){
 	if(data.tool==="text"&&$("input").length===0)
 		drawText(x,y); //绘画文字
 	else{
-			drawWays(data,x,y); //绘画线条和橡皮
+			drawWays(x,y); //绘画线条和橡皮
 			canvas.mousemove(moveDraw); //鼠标移动
 		}
 }
@@ -124,7 +116,7 @@ function moveDraw(e){
 	if(draw===true){
 		let x=e.offsetX,
 			y=e.offsetY;
-		drawWays(data,x,y); //绘画线条或橡皮
+		drawWays(x,y); //绘画线条或橡皮
 	}
 }
 function endDraw(e){
@@ -149,19 +141,16 @@ function pushImgData(){
 function head(){
 	$(".history .iconfont:eq(1)").click(function(){
 		if(history.step<history.img.length-1){
-		history.step++;
-		ctx.putImageData(history.img[history.step],0,0);
+			history.step++;
+			ctx.putImageData(history.img[history.step],0,0);
 		}
 	});
 }
 function back(){
 	$(".history .iconfont:eq(0)").click(function(){
-		if(history.step>-1){
+		if(history.step>0){
 			history.step--;
-			if(history.step!==-1)
-				ctx.putImageData(history.img[history.step],0,0);
-			else
-				canvasInit();
+			ctx.putImageData(history.img[history.step],0,0);
 		}
 	});
 }

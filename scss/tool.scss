@@ -1,0 +1,252 @@
+$h: 80px;
+@mixin block{
+	width: 22px;
+	height: 22px;
+	margin: 1px;
+	border: 1px solid #aaa;
+	float: left;
+	cursor: pointer;
+	.one-color{
+		width: 20px;
+		height: 20px;
+		margin: 1px;
+	}
+	&:hover{
+		border:1px solid #000;
+		box-shadow: 0 0 1px #aaa;
+	}
+}
+
+.topbar{
+	height: $h;
+	padding: 10px;
+	.color,.tool,.clear,.history{
+		float: right;
+		margin-right: 30px;
+	}
+}
+.color{
+	width: 300px+26px;
+	height: $h;
+	.color-main{
+		width: 52px;
+		margin: 0 7px;
+		float: left;
+	}
+	.color-switch{
+		width: 26px;
+		height: 60px;
+		float: left;
+		padding: 14px 0;
+	}
+	.color-list,.color-rgb{
+		width: 234px;
+		float: left;
+		margin: 1px 0;
+	}
+}
+.main-one{
+	cursor: pointer;
+	width: 44px;
+	height: 44px;
+	margin: 17px auto;
+	border: 1px solid #aaa;
+	.one-color{
+		width: 42px;
+		height: 42px;
+		background-color: #000;
+		margin: 1px;
+	}
+}
+.color-switch .switch-one{
+	@include block;
+	border:none;
+}
+.color-list .list-one{
+	@include block;
+}
+.color-rgb .rgb-one{
+	div{
+		display: inline-block;
+		line-height: 26px;
+		text-align: center;
+		width: 40px;
+	}
+	#red-val,#green-val,#blue-val{
+		text-align: right;
+	}
+	.rgb{
+		width: 152px;
+		height: 10px;
+		cursor: pointer;
+		.ui-widget-header{
+			background-color: transparent;
+		}
+	}
+	@mixin lin($color){
+		background: linear-gradient(to right,#000,$color);
+		span{
+			background-color: #000;
+		}
+	}
+	#red{
+		@include lin(red);
+	}
+	#green{
+		@include lin(green);
+	}
+	#blue{
+		@include lin(blue);
+	}
+}
+// tool
+.tool{
+	width: 200px;
+	height: $h;
+	.tool-list{
+		height: 40px;
+		width: 100%;
+	}
+	.tool-attr{
+		height: 40px;
+		width: 100%;
+	}
+}
+.tool-list .list-one{
+	width: 30px;
+	height: 30px;
+	margin: 5px 10px;
+	float: left;
+	text-align: center;
+	line-height: 30px;
+	cursor: pointer;
+	border-radius: 10px;
+	transition: background-color .4s;
+	&:hover{
+		background-color: #666;
+		font-weight: bold;
+	}
+	&:active{
+		background-color: #aaa;
+		color: #fff;
+	}
+}
+.active{
+	background-color: #aaa;
+	color: #fff;
+}
+.tool-attr .attr-one{
+	width: 100%;
+	height: 100%;
+}
+#pencilpx,#textsize{
+		width: 120px;
+		height: 10px;
+		margin: 0 5px 0 15px;
+		line-height: 40px;
+		cursor: pointer;
+		display: inline-block;
+		.ui-slider-handle{
+			border-radius: 50%;
+			outline: none;
+		}
+	}
+	#px,#size{
+		display: inline-block;
+		width: 30px;
+		text-align: center;
+		line-height: 40px;
+	}
+.attr-text .family{
+	width: 300px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	position: relative;
+	left: -50px;
+	select{
+		height: 23px;
+		line-height: 23px;
+		border-radius: 5px;
+		outline: none;
+	}
+	#fontfamily{
+		width: 84px;
+	}
+	#fontsize{
+		width: 44px;
+	}
+	.iconfont{
+		display: inline-block;
+		width: 30px;
+		height: 30px;
+		line-height: 30px;
+		cursor: pointer;
+		font-size: 16px;
+		border-radius: 10px;
+		&:hover{
+			color: #aaa;
+		}
+		&:active{
+			background-color: #eee;
+		}
+	}
+}
+
+//clear
+.clear{
+	.iconfont{
+		text-align: center;
+		height: 45px;
+		width: 45px;
+		line-height: 45px;
+		font-size: 32px;
+		border-radius:10px;
+		font-weight: bold;
+		color:#666;
+		cursor: pointer;
+		&:hover{
+			background-color: #eee;
+		}
+		&:active{
+			background-color: #969696;
+		}
+	}
+	margin-top: 17.5px;
+}
+//history
+.history{
+	.iconfont{
+		text-align: center;
+		height: 40px;
+		width: 40px;
+		line-height: 40px;
+		font-size: 22px;
+		border-radius:10px;
+		font-weight: bold;
+		color:#666;
+		cursor: pointer;
+		display: inline-block;
+		&:hover{
+			background-color: #eee;
+		}
+		&:active{
+			background-color: #969696;
+		}
+	}
+	margin-top: 17.5px;
+}
+.active2{
+	background-color: #C8C8C8;
+	color: #fff;
+}
+.hide{
+	display: none;
+}
+.history,.clear,.main-one,.switch-one,.color-rgb,.color-list,.tool-list,.tool-attr{
+	z-index: 99;
+	position: relative;
+}
+.attr-text,.rgb-one,.history,.iconfont,#px,#size{
+	user-select:none;
+}

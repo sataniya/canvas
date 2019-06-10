@@ -1,0 +1,28 @@
+@import "./reset";
+@import "./iconfont";
+@import "./tool";
+
+#mycanvas{
+	position:absolute;
+	top:0;
+	left:0;
+	z-index: 0;
+}
+
+.saveAsPic .iconfont{
+	width: 40px;
+	height: 40px;
+	font-size: 32px;
+	line-height: 40px;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 5px;
+	z-index: 99;
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+	&:hover{
+		background-color: #FAEBD7;
+		color:#BF3EFF;
+	}
+}

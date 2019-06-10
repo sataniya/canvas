@@ -105,9 +105,9 @@ function startDraw(e){
 	ctx.beginPath();
 	ctx.save();
 	setStyles(); //设置样式
-	if(data.tool==="text"&&$("input").length===0)
+	if(data.tool==="text"&&$("input").length===0){
 		drawText(x,y); //绘画文字
-	else{
+	}else if(data.tool!=="text"){
 			drawWays(x,y); //绘画线条和橡皮
 			canvas.mousemove(moveDraw); //鼠标移动
 		}
@@ -126,6 +126,7 @@ function endDraw(e){
 	if(data.tool!=="text"){
 		pushImgData();
 	}
+	canvas.unbind("mousemove");
 }
 function pushImgData(){
 	if(history.step<history.img.length-1)
